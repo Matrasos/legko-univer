@@ -1,0 +1,141 @@
+// Адаптивный шрифт
+@mixin adaptive-font-size(
+  $min-font-size,
+  $max-font-size,
+  $screen-width-min,
+  $screen-width-max
+) {
+  $difference: $max-font-size - $min-font-size;
+  font-size: calc(
+    #{$min-font-size}px + (#{$difference} + #{$difference} * 0.47) *
+      ((100vw - #{$screen-width-min}px) / #{$screen-width-max})
+  );
+}
+
+// Для текста
+
+@mixin text {
+  color: $white;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 120%;
+  text-transform: lowercase;
+
+  @media screen and (min-width: 1920px) and (max-width: 2500px) {
+    font-size: 1.05vw;
+  }
+  @media screen and (min-width: 2499px) {
+    font-size: 26px;
+  }
+  @media screen and (max-width: 1024px) {
+    @include adaptive-font-size(14, 20, 425, 1024);
+  }
+}
+
+// H-заголовки
+@mixin title {
+  color: $white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -1%;
+  font-size: 114px;
+
+  @media screen and (min-width: 1920px) and (max-width: 2500px) {
+    font-size: 6vw;
+  }
+  @media screen and (min-width: 2499px) {
+    font-size: 150px;
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 10vw;
+  }
+}
+
+@mixin subtitle {
+  color: $white;
+  font-size: 60px;
+  font-weight: 300;
+  text-transform: lowercase;
+  letter-spacing: -1%;
+
+  @media screen and (min-width: 1920px) and (max-width: 2500px) {
+    font-size: 3.1vw;
+  }
+  @media screen and (min-width: 2499px) {
+    font-size: 78px;
+  }
+  @media screen and (max-width: 1024px) {
+    @include adaptive-font-size(46, 60, 425, 1024);
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 10vw;
+  }
+}
+
+@mixin heading {
+  color: $white;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 110%;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 1920px) and (max-width: 2500px) {
+    font-size: 2vw;
+  }
+  @media screen and (min-width: 2499px) {
+    font-size: 50px;
+  }
+  @media screen and (max-width: 1024px) {
+    @include adaptive-font-size(20, 38, 425, 1024);
+  }
+}
+
+// permanent
+@mixin fields {
+  color: $white;
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 110%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+@mixin tabs {
+  color: $white;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 120%;
+  text-transform: lowercase;
+}
+
+@mixin logo {
+  color: $white;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+@mixin chips {
+  color: $white;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 110%;
+  text-transform: lowercase;
+}
+
+@mixin subtitleSpecial {
+  color: $blue;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 110%;
+  text-transform: lowercase;
+}
+
+@mixin buttonText {
+  color: $white;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 110%;
+  text-transform: lowercase;
+}

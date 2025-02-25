@@ -1,0 +1,67 @@
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translateX(200%);
+    transform: translateX(200%);
+  }
+  30% {
+    -webkit-transform: translate(0%);
+    transform: translate(0%);
+  }
+  70% {
+    -webkit-transform: translate(0%);
+    transform: translate(0%);
+  }
+  to {
+    -webkit-transform: translateX(200%);
+    transform: translateX(200%);
+  }
+}
+
+.message {
+  position: fixed;
+  padding: 24px;
+  background-color: $blackGlass;
+  backdrop-filter: blur(7px);
+  border-radius: $borderRadius * 8;
+  border: 1px solid $border;
+  top: 5%;
+  right: 1%;
+  z-index: 35;
+  max-width: 480px;
+  -webkit-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+  animation: 5s;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 91%;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  &__subtitle {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: lowercase;
+  }
+}
+
+.message.success .message__title {
+  color: $green;
+}
+
+.message.error .message__title {
+  color: $yellow;
+}
+
+@media (max-width: 768px) {
+  .message {
+    padding: 20px;
+    &__title {
+      @include adaptive-font-size(24, 32, 320, 768);
+    }
+  }
+}

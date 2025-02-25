@@ -1,0 +1,17 @@
+.pages.design {
+  .cards__grid-card {
+    h2 {
+      @media screen and (max-width: 1440px) {
+        font-size: 48px;
+      }
+      @media screen and (max-width: 768px) {
+        @include adaptive-font-size(24, 48, 320, 768);
+      }
+    }
+  }
+  .cards__grid {
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

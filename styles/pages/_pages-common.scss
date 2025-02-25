@@ -1,0 +1,256 @@
+.pages {
+  .main {
+    margin: 40px 0;
+    margin-top: 8px;
+  }
+  .title {
+    width: 100%;
+    padding: 24px;
+    background-image: url(/assets/bg/pages-bg.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 32px;
+    h1 {
+      @include title;
+    }
+    p {
+      @include text;
+      margin-top: 24px;
+    }
+  }
+
+  .plan {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 32px;
+    background-color: $graphite;
+    border: 1px solid $border;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 1024px) {
+      align-items: center;
+    }
+
+    @media screen and (max-width: 580px) {
+      align-items: start;
+    }
+
+    &__title {
+      @include text;
+      align-self: start;
+    }
+
+    &__description {
+      display: inline-block;
+      margin-top: 20px;
+      padding-left: 50%;
+
+      @media screen and (max-width: 1200px) {
+        padding-left: 35%;
+      }
+      @media screen and (max-width: 1024px) {
+        padding-left: 0;
+      }
+
+      & > div {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        @media screen and (max-width: 580px) {
+          margin-top: 10px;
+        }
+
+        p {
+          @include heading;
+          @media screen and (max-width: 425px) {
+            font-size: 20px;
+          }
+
+          min-width: 80px;
+          @media screen and (max-width: 580px) {
+            min-width: 60px;
+          }
+          @media screen and (max-width: 375px) {
+            min-width: 30px;
+          }
+        }
+
+        h3 {
+          @include heading;
+          text-transform: lowercase;
+          @media screen and (max-width: 425px) {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .advantages {
+    margin-top: 200px;
+
+    h2 {
+      @include subtitle;
+      text-transform: uppercase;
+    }
+    & > p {
+      max-width: 900px;
+      margin-top: 12px;
+      @include text;
+    }
+
+    &__grid {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+
+      @media screen and (max-width: 1500px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (max-width: 768px) {
+        margin-top: 10px;
+      }
+      @media screen and (max-width: 580px) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      &-card {
+        flex: 1 1 25%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        background-color: $graphite;
+        border: 1px solid $border;
+        border-radius: 32px;
+        padding: 24px;
+
+        p:first-child {
+          @include subtitleSpecial;
+          font-size: 50px;
+          @media screen and (max-width: 768px) {
+            font-size: 40px !important;
+          }
+        }
+        p:last-child {
+          @include text;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .cards {
+    margin-top: 200px;
+
+    & > h2 {
+      padding: 12px;
+      @include subtitle;
+      text-transform: uppercase;
+    }
+
+    & > p {
+      display: none;
+      margin-top: 12px;
+      font-size: 20px;
+      font-weight: 300;
+      text-transform: lowercase;
+      line-height: 140%;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+        font-weight: 200;
+        line-height: 110%;
+      }
+    }
+    & > p:last-child {
+      @include text;
+      display: block;
+    }
+
+    &__grid {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      @media screen and (max-width: 870px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      &-card {
+        border-radius: 32px;
+        padding: 24px;
+        background-color: $graphite;
+        border: 1px solid $border;
+
+        @media screen and (max-width: 1024px) {
+          padding: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+          padding: 24px 14px !important;
+        }
+
+        h2 {
+          @include subtitle;
+          color: $blue;
+          @media screen and (max-width: 425px) {
+            font-size: 36px;
+          }
+        }
+        p {
+          @include text;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .technologies {
+    margin-top: 200px;
+    background-color: $graphite;
+    border: 1px solid $border;
+    border-radius: 32px;
+    padding: 24px;
+
+    h2 {
+      @include subtitle;
+      text-transform: uppercase;
+    }
+
+    &__list {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      div {
+        @include fields;
+        text-transform: lowercase;
+        padding: 8px 24px;
+        border-radius: 20px;
+        background-color: $blue;
+        white-space: nowrap;
+        width: fit-content;
+
+        @media screen and (max-width: 580px) {
+          font-size: 18px !important;
+        }
+      }
+    }
+    p {
+      @include text;
+      margin-top: 20px;
+    }
+  }
+}

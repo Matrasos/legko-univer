@@ -1,0 +1,27 @@
+.pages.develop {
+  .cards__grid {
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .advantages__grid-card p:first-child {
+    @media screen and (max-width: 425px) {
+      font-size: 50px;
+    }
+  }
+  .cards__grid-card {
+    @media screen and (max-width: 580px) {
+      padding: 10px;
+    }
+    h2 {
+      @media screen and (max-width: 580px) {
+        font-size: 30px;
+      }
+    }
+  }
+  .technologies__list div {
+    @media screen and (max-width: 580px) {
+      font-size: 24px;
+    }
+  }
+}

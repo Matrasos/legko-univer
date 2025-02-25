@@ -1,0 +1,52 @@
+RewriteEngine On
+
+# Редирект c http на https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Если запрашиваемый объект не папка и не файл
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Для страниц в папке "pages"
+RewriteRule ^develop$ /pages/develop/develop.php [L]
+RewriteRule ^seo$ /pages/seo/seo.php [L]
+RewriteRule ^404$ /pages/404/404.php [L]
+RewriteRule ^branding$ /pages/branding/branding.php [L]
+RewriteRule ^design$ /pages/design/design.php [L]
+RewriteRule ^feedback$ /pages/feedback/feedback.php [L]
+RewriteRule ^privacy$ /pages/privacy/privacy.php [L]
+
+# Если запрашиваемый объект с дописанным расширением php - файл
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Для en.php на одном уровне с основным файлом
+RewriteRule ^develop/en$ /pages/develop/en.php [L]
+RewriteRule ^seo/en$ /pages/seo/en.php [L]  
+RewriteRule ^404/en$ /pages/404/en.php [L]
+RewriteRule ^branding/en$ /pages/branding/en.php [L]
+RewriteRule ^design/en$ /pages/design/en.php [L]
+RewriteRule ^feedback/en$ /pages/feedback/en.php [L]
+RewriteRule ^privacy/en$ /pages/privacy/en.php [L]
+
+# Для de.php на одном уровне с основным файлом
+RewriteRule ^develop/de$ /pages/develop/de.php [L]
+RewriteRule ^seo/de$ /pages/seo/de.php [L]
+RewriteRule ^404/de$ /pages/404/de.php [L]
+RewriteRule ^branding/de$ /pages/branding/de.php [L]
+RewriteRule ^design/de$ /pages/design/de.php [L]
+RewriteRule ^feedback/de$ /pages/feedback/de.php [L]
+RewriteRule ^privacy/de$ /pages/privacy/de.php [L]
+
+# 404 Страница
+ErrorDocument 404 https://legko.company/404
+
+# Удаление "pages" из URL
+RewriteCond %{THE_REQUEST} " /pages(/\S*)"
+RewriteRule ^ %1 [R=301,L]
+
+# Если файл найден в папке "pages", перенаправляем туда
+RewriteCond %{DOCUMENT_ROOT}/pages/$1 -f
+RewriteRule ^(.+)$ /pages/$1 [L]

@@ -1,0 +1,193 @@
+.feedback {
+  .main {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__form {
+    padding: 20px;
+    background-color: $graphite;
+    border: 1px solid $border;
+    border-radius: 32px;
+
+    h1 {
+      @include title;
+
+      @media screen and (min-width: 1024px) and (max-width: 1920px) {
+        font-size: 80px;
+      }
+    }
+
+    p:not([id="button-hide-text"]) {
+      @include text;
+      margin-top: 10px;
+      padding-left: 4px;
+    }
+
+    &-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+
+      textarea {
+        resize: none;
+        grid-column: 1 / span 2;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 870px) {
+        grid-template-columns: 1fr;
+        textarea {
+          grid-column: 1 / span 1;
+        }
+      }
+
+      @media screen and (max-width: 580px) {
+        #field-textarea {
+          font-size: 16px !important;
+        }
+        .field {
+          font-size: 17px;
+          padding: 16px 18px;
+        }
+      }
+    }
+
+    &-row {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      gap: 20px;
+
+      @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      button {
+        width: 100%;
+        @media screen and (max-width: 425px) {
+          font-size: 5.6vw;
+        }
+      }
+
+      .form {
+        &__tabs {
+          @include tabs;
+          display: flex;
+          gap: 4px;
+          @media screen and (max-width: 425px) {
+            flex-direction: column;
+          }
+
+          input {
+            display: none;
+          }
+
+          input:checked + label {
+            background-color: $blue;
+            border: 1px solid $blue;
+          }
+
+          &-tab {
+            width: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid $white;
+            padding: 22px 38px;
+            border-radius: 16px;
+            @media screen and (max-width: 1024px) {
+              padding: 16px 0;
+              flex: 1 1 33.333%;
+            }
+            @media screen and (max-width: 600px) {
+              font-size: 14px;
+              padding: 12px 0;
+            }
+            @media screen and (max-width: 425px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__partnership {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: $graphite;
+    border: 1px solid $border;
+    border-radius: 32px;
+    margin: 12px 0;
+
+    h3 {
+      @include heading;
+      font-weight: 600;
+      font-size: 40px !important;
+
+      @media screen and (max-width: 425px) {
+        font-size: 9.4vw !important;
+      }
+    }
+    p {
+      margin-top: 20px;
+      @include text;
+    }
+
+    a {
+      display: block;
+      padding: 30px 0;
+      text-align: center;
+      margin-top: 20px;
+      background-color: $blue;
+      border-radius: 16px;
+      width: 100%;
+      @include buttonText;
+      font-weight: 400;
+
+      @media screen and (max-width: 768px) {
+        padding: 25px 38px;
+      }
+
+      @media screen and (max-width: 425px) {
+        padding: 25px;
+        font-size: 5.6vw;
+      }
+
+      span {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 5%;
+          height: 1px;
+          background-color: $white;
+        }
+      }
+    }
+  }
+  footer {
+    padding: 20px;
+    background-color: $graphite;
+    border-radius: 16px;
+    @media screen and (max-width: 768px) {
+      padding: 10px;
+    }
+  }
+}

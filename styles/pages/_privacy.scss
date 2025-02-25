@@ -1,0 +1,66 @@
+.privacy {
+  .main {
+    margin: 10px 0 20px;
+  }
+
+  &__title {
+    padding: 24px;
+    background-color: $graphite;
+    border: 1px solid $border;
+    border-radius: 32px;
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 100%;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+    padding: 24px;
+    background-color: $graphite;
+    border: 1px solid $border;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 100%;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 18px;
+      line-height: 110%;
+      letter-spacing: -1%;
+    }
+  }
+
+  &__content {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: $graphite;
+    border: 1px solid $border;
+    border-radius: 32px;
+    p {
+      @include text;
+    }
+  }
+  footer {
+    padding: 20px;
+    background-color: $graphite;
+    border-radius: 32px;
+    @media screen and (max-width: 768px) {
+      padding: 10px;
+    }
+  }
+}

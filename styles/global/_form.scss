@@ -1,0 +1,79 @@
+.call {
+  padding: 200px 0;
+  width: 100%;
+
+  h2 {
+    text-align: center;
+    @include subtitle;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 425px) {
+      font-size: 32px !important;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $graphite;
+    padding: 24px;
+    border: 1px solid $border;
+    border-radius: 32px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
+    input {
+      width: 630px;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    button {
+      width: 100%;
+    }
+
+    &__tabs {
+      @include tabs;
+      margin: 12px 0;
+      width: 100%;
+      display: flex;
+      gap: 4px;
+
+      @media screen and (max-width: 375px) {
+        flex-direction: column;
+      }
+
+      input {
+        display: none;
+
+        &:checked + label {
+          background-color: $blue;
+          border: 1px solid $blue;
+        }
+      }
+
+      &-tab {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid $white;
+        padding: 15px 20px;
+        border-radius: 16px;
+
+        @media screen and (max-width: 768px) {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
