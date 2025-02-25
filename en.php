@@ -1,5 +1,5 @@
 <?php
-require_once ('./constants/constants.php');
+require_once('./constants/constants.php');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -79,27 +79,27 @@ require_once ('./constants/constants.php');
         <div class="wow fadeInUp hero__description" data-wow-delay="0.7s">
           <div class=" hero__description-row">
             <?php
-    for ($i = 0; $i < 2; $i++) {
-      ?>
+            for ($i = 0; $i < 2; $i++) {
+            ?>
             <div class="hero__description-text">
               <span><?php echo $descriptionText[$i][0]; ?></span>
               <span data-i18n="<?php echo $descriptionText[$i][2]; ?>"><?php echo $descriptionText[$i][1]; ?></span>
             </div>
             <?php
-    }
-    ?>
+            }
+            ?>
           </div>
           <div class="hero__description-row">
             <?php
-    for ($i = 2; $i < 4; $i++) {
-      ?>
+            for ($i = 2; $i < 4; $i++) {
+            ?>
             <div class="hero__description-text">
               <span><?php echo $descriptionText[$i][0]; ?></span>
               <span data-i18n="<?php echo $descriptionText[$i][2]; ?>"><?php echo $descriptionText[$i][1]; ?></span>
             </div>
             <?php
-    }
-    ?>
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -119,6 +119,47 @@ require_once ('./constants/constants.php');
         </div>
 
       </section>
+
+      <section>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <h2>SEO</h2>
+              </td>
+              <td>
+                <h2>100,000 ₸</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2>Development</h2>
+              </td>
+              <td>
+                <h2>250,000 ₸</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2>Branding</h2>
+              </td>
+              <td>
+                <h2>50,000 ₸</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2>Web Design</h2>
+              </td>
+              <td>
+                <h2>200,000 ₸</h2>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+
       <section class="quote">
         <p data-i18n="quote-first-start" class="wow fadeInUp quote-phrase">/. Мы постоянно исследуем рынок, чтобы
           обнаруживать
